@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Cleaner</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs" type="module"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>PDF Cleaner</h1>
+      <p class="lede">Decrypt and strip Adobe restrictions on the server. Sign with a Windows OpenSC helper so the PIN never leaves your PC.</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Upload</h2>
+      <input id="file" type="file" accept="application/pdf" />
+      <label>Owner/user password (if encrypted)
+        <input id="password" type="password" autocomplete="off" />
+      </label>
+      <button id="uploadBtn" type="button">Upload &amp; clean</button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>2. Preview &amp; signature box</h2>
+      <p class="hint">Drag on the page to place a visible signature rectangle (PDF points, origin bottom-left).</p>
+      <div class="preview-tools">
+        <button id="prevPage" type="button">Prev</button>
+        <span id="pageLabel">Page 1</span>
+        <button id="nextPage" type="button">Next</button>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="pdfCanvas"></canvas>
+        <canvas id="boxCanvas"></canvas>
+      </div>
+      <p id="boxLabel">Box: none</p>
+    </section>
+
+    <section class="card">
+      <h2>3. Sign (Windows helper)</h2>
+      <p>Job id: <code id="jobId">—</code></p>
+      <pre id="helperCmd" class="cmd"></pre>
+      <p class="hint">Optional PEM cert for a software-key / SoftHSM demo (not a smart card):</p>
+      <textarea id="certPem" rows="6" placeholder="-----BEGIN CERTIFICATE-----"></textarea>
+      <button id="prepBtn" type="button">Prepare with PEM cert</button>
+      <label>Signature hex from helper / openssl
+        <input id="sigHex" />
+      </label>
+      <button id="completeBtn" type="button">Complete signature</button>
+      <p><a id="downloadLink" href="#" hidden>Download result</a></p>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

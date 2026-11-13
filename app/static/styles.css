@@ -1,0 +1,90 @@
+:root {
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --accent: #0078d4;
+  --border: #ddd;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-size: 14px;
+}
+h1 { margin: 0 0 0.75rem; font-weight: 600; }
+h2 { margin: 0 0 0.75rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+.lede, .hint, .status { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 1rem 0 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+label { display: block; margin: 0 0 0.4rem; font-weight: 500; }
+input[type="file"] { padding: 0.5rem; border-style: dashed; background: #fafafa; }
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.6rem;
+  background: #fafafa;
+  color: var(--text);
+}
+textarea { resize: vertical; min-height: 60px; }
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+button:hover { filter: brightness(1.05); }
+button:focus-visible { outline: 2px solid #006699; outline-offset: 2px; }
+button:disabled { background: var(--muted); cursor: not-allowed; opacity: 0.7; }
+.preview-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.preview-tools button { min-width: 48px; }
+.cmd {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  overflow-x: auto;
+  border-radius: 4px;
+  font-family: "Consolas", "Segoe UI Mono", monospace;
+  font-size: 13px;
+  color: #333;
+}
+#pdfCanvas, #boxCanvas { display: block; }
+#boxCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: crosshair;
+  border-radius: 4px;
+}
+.canvas-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: auto;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+a { color: var(--accent); }
+code, .cmd code { font-family: inherit; background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 3px; }

@@ -1,0 +1,37 @@
+# qpdf build leftovers in this workspace
+CMakeFiles/
+CMakeCache.txt
+CPack*.cmake
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+build_now.log
+compare-for-test/
+examples/
+fuzz/
+include/
+libqpdf/
+libtests/
+manual/
+qpdf/
+qpdf-source/
+pdf-cleaner-web/
+zlib-flate/
+*.o
+*.so
+*.a
+
+# Python
+app/.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Jobs / uploads
+app/data/
+*.swbn
+.env
+helper.config.json
